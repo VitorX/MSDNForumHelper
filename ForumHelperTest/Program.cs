@@ -11,12 +11,16 @@ namespace ForumHelperTest
     {
         static void Main(string[] args)
         {
-            var threads=new FetchRequest().Run();
+            var retchRequest = new FetchRequest();
+            retchRequest.ForumName = "vsto";
+            var threads= retchRequest.Run();
             const int nameWidth = -10;
             foreach (var thread in threads)
             {
                 Console.WriteLine($"{"id",nameWidth}: {thread.ThreadId}");
                 Console.WriteLine($"{"title",nameWidth}: {thread.ThreadTitle}");
+                Console.WriteLine($"{"isAnswered",nameWidth}: {thread.IsAnswered}");
+                Console.WriteLine($"{"createdTime",nameWidth}: {thread.CreatedTime}");
                 Console.WriteLine("");
             }
             Console.ReadLine();

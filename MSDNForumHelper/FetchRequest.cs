@@ -23,7 +23,7 @@ namespace MSDNForumHelper
 
         private string requestUrl = "";
         private System.Object lockThis = new System.Object();
-        public FetchRequest(string baseUrl = "https://social.msdn.microsoft.com/Forums/en-US/home?forum=en-US")
+        public FetchRequest(string baseUrl = "https://social.msdn.microsoft.com/Forums/office/en-US/home")
         {
             this.BaseUrl = baseUrl;
         }
@@ -32,7 +32,7 @@ namespace MSDNForumHelper
         {
             Dictionary<string, string> urlParamters = new Dictionary<string, string>();
             AddUrlParameter(urlParamters, "Category", Category);
-            AddUrlParameter(urlParamters, "ForumName", ForumName);
+            AddUrlParameter(urlParamters, "forum", ForumName);
             AddUrlParameter(urlParamters, "Filter", Filter);
             AddUrlParameter(urlParamters, "Sort", Sort);
 
