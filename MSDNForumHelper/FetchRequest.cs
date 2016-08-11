@@ -10,19 +10,14 @@ namespace MSDNForumHelper
     public class FetchRequest
     {
         public string BaseUrl { set; get; }
-
         public string Category { set; get; }
-        //=officedev&forum=wfprerelease&filter=alltypes&sort=lastpostdesc
         public string ForumName { set; get; }
         public string Filter { set; get; }
         public string Sort { set; get; }
 
         public int PagesPerRequest = 1;
 
-        private int ThreadsCount;
-
         private string requestUrl = "";
-        private System.Object lockThis = new System.Object();
         public FetchRequest(string baseUrl = "https://social.msdn.microsoft.com/Forums/office/en-US/home")
         {
             this.BaseUrl = baseUrl;

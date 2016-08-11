@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MSDNForumHelper
 {
-    interface IThreadHelper
+    interface IThreadParse
     {
         List<Thread> Parse(string htmlThread);
     }
