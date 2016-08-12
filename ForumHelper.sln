@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumHelper", "MSDNForumHel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumHelperTest", "ForumHelperTest\ForumHelperTest.csproj", "{84F7397D-20A2-4823-9AB9-C7249DF247F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumHelper.Web", "ForumHelper.Web\ForumHelper.Web.csproj", "{07A76DBA-92A2-4025-9840-B33BB6CE413F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{84F7397D-20A2-4823-9AB9-C7249DF247F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F7397D-20A2-4823-9AB9-C7249DF247F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84F7397D-20A2-4823-9AB9-C7249DF247F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A76DBA-92A2-4025-9840-B33BB6CE413F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A76DBA-92A2-4025-9840-B33BB6CE413F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A76DBA-92A2-4025-9840-B33BB6CE413F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A76DBA-92A2-4025-9840-B33BB6CE413F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
