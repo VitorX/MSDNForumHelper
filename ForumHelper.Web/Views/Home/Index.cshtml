@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html ng-app="ForumHelperApp">
+<head>
+    <title></title>
+    @*@Styles.Render("~/bundles/css/siteCss")*@
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body ng-controller="tabsCtrl">
+
+    <div class="container">
+        <uib-tabset active="active">
+            <uib-tab index="0" heading="Over All AR">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-2">Begin Date:</div>
+                        <div class="col-md-2"> <p><span>End Date:</span></p></div>
+                    </div>
+                        <div class="row">
+                            <div class="col-md-2" ng-controller="datetimePickerCtrl">
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="col-md-2" ng-controller="datetimePickerCtrl">
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-md-1">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="7 Days AR"></uib-tab>
+            <uib-tab index="2" heading="3 Days AR">
+                {{tab.content}}
+            </uib-tab>
+        </uib-tabset>
+
+    </div>
+    <script src="~/Scripts/ForumHelperApp.js"></script>
+    <script src="~/Scripts/Controllers/tabsController.js"></script>
+    <script src="~/Scripts/Controllers/datetimePickerController.js"></script>
+    @*@Scripts.Render("~/bundles/ForumHelperApp")*@
+
+</body>
+</html>
