@@ -1,8 +1,4 @@
-﻿angular.module('ForumHelperApp').controller('tabsCtrl', function ($scope) {
-    $scope.tabs = [
-  { title: 'Dynamic Title 1', content: 'Dynamic content 1' },
-  { title: 'Dynamic Title 2', content: 'Dynamic content 2', disabled: true }
-    ];
+﻿angular.module('ForumHelperApp').controller('tabsCtrl',['$scope','$window', function ($scope,$window) {
 
     $scope.alertMe = function () {
         setTimeout(function () {
@@ -10,8 +6,9 @@
         });
     };
 
-    $scope.model = {
-        name: 'Tabs'
-    };
-});
+    $scope.search = function () {
+        $window.alert('function is not able now!');
+    }
+  
+}]);
 
