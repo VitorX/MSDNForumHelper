@@ -2,6 +2,7 @@
 using mshtml;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,12 +33,20 @@ namespace MSDNForumHelper
                 if (parseCreatedTime)
                     t1.CreatedTime = createdTime;
 
-                t1.CreatedBy = childNode.SelectNodes("div/div[@class='details']/div[@class='detailscontainer']/div[@class='metrics smallgreytext']/span[7]/a/span[1]").FirstOrDefault().InnerText.Trim();
-                t1.LastRepliedBy= childNode.SelectNodes("div/div[@class='details']/div[@class='detailscontainer']/div[@class='metrics smallgreytext']/span[9]/a[2]").FirstOrDefault().InnerText.Replace("-","").Trim();
+                t1.CreatedBy = childNode.SelectNodes("div/div[@class='details']/div[@class='detailscontainer']/div[@class='metrics smallgreytext']/span[@class='lastpost'][1]/a/span").FirstOrDefault().InnerText.Trim();
 
-                parseLastRepliedTime = DateTime.TryParse(childNode.SelectNodes("div/div[@class='details']/div[@class='detailscontainer']/div[@class='metrics smallgreytext']/span[9]/span").FirstOrDefault().InnerText, out lastRepliedTime);
-                if (parseLastRepliedTime)
-                    t1.LastRepliedTime = lastRepliedTime;
+                try
+                {
+                    t1.LastRepliedBy = childNode.SelectNodes("div/div[@class='details']/div[@class='detailscontainer']/div[@class='metrics smallgreytext']/span[@class='lastpost'][2]/a[2]").FirstOrDefault().InnerText.Replace("-", "").Trim();
+                    parseLastRepliedTime = DateTime.TryParse(childNode.SelectNodes("div/div[@class='details']/div[@class='detailscontainer']/div[@class='metrics smallgreytext']/span[9]/span").FirstOrDefault().InnerText, out lastRepliedTime);
+                    if (parseLastRepliedTime)
+                        t1.LastRepliedTime = lastRepliedTime;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Thread:{t1.ThreadId} is not replied!");
+                }
+                
                
                 threads.Add(t1);
             }

@@ -11,6 +11,13 @@ namespace ForumHelperTest
     {
         static void Main(string[] args)
         {
+            //TestFetchRequest();
+            TestARReport();
+            Console.ReadLine();
+        }
+
+        static void TestFetchRequest()
+        {
             var retchRequest = new FetchRequest();
             retchRequest.ForumName = "vsto";
             retchRequest.PagesPerRequest = 2;
@@ -38,7 +45,12 @@ namespace ForumHelperTest
                 threadsContext.Threads.AddRange(newThreads);
 
             threadsContext.SaveChanges();
-            Console.ReadLine();
+        }
+
+        static void TestARReport()
+        {
+            var report= ARReport.GetReport(new ARRequest() { BeginDate = DateTime.Now.AddDays(-7), EndDate = DateTime.Now });
+            Console.WriteLine($"{report.AnsweredThreads}/{report.TotalThreads}:{report.AnsweredThreads/report.TotalThreads}");
         }
     }
 }

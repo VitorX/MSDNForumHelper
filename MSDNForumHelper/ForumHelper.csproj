@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ARReport.cs" />
     <Compile Include="FetchRequest.cs" />
     <Compile Include="IThreadParse.cs" />
     <Compile Include="MSDNThreadParse.cs" />
