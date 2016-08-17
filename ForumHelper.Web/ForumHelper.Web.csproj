@@ -195,9 +195,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-chart.js" />
+    <Content Include="Scripts\angular-chart.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Controllers\chartController.js" />
     <Content Include="Scripts\Controllers\datetimePickerController.js" />
     <Content Include="Scripts\Controllers\tabsController.js" />
     <Content Include="Scripts\ForumHelperApp.js" />
+    <Content Include="Scripts\Services\ARRateService.js" />
     <Content Include="Scripts\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\ui-bootstrap.js" />
     <Content Include="Scripts\_references.js" />
@@ -217,6 +222,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <Content Include="Scripts\angular-chart.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MSDNForumHelper\ForumHelper.csproj">

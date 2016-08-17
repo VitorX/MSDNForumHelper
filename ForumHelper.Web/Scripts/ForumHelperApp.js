@@ -1,4 +1,4 @@
-﻿var ForumHelperApp = angular.module('ForumHelperApp', ['ngAnimate','ui.bootstrap']);
+﻿var ForumHelperApp = angular.module('ForumHelperApp', ['ngAnimate','ui.bootstrap','chart.js']);
 
 
 
